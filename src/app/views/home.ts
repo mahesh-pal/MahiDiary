@@ -22,10 +22,10 @@ export class HomeComponent {
     }
 
     onScrollDown(ev) {
-        console.log('scrolled down!!', ev);
+        //TODO: implement infinite scroll
       }
 
       onUp(ev) {
-
+      // TODO:  implement infinite scroll
       }
 }
