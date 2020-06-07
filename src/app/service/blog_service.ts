@@ -8,7 +8,7 @@ import {Blog} from '../models';
 export class BlogService {
     constructor(private db: AngularFirestore) {}
 
-    getALlBlogs(): Observable<Blog[]> {
+    moreBlogs(): Observable<Blog[]> {
        return this.db
         .collection<Blog>('blogs')
         .get()
@@ -29,7 +29,7 @@ export class BlogService {
     }
 
     saveBlog(title: string, content: string) {
-        const blogRef = this.db.doc<{title: string}>(`blogs/title`);
+        const blogRef = this.db.doc<{title: string}>(`blogs/${title}`);
         const summaryPromise = blogRef.set({title});
         const contentPromise = blogRef.collection('content')
                 .doc<{content: string}>(title).set({content});

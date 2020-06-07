@@ -3,6 +3,7 @@ import { BlogService } from '../service/blog_service';
 import {Observable} from 'rxjs';
 import {Blog} from '../models';
 import {Router} from '@angular/router';
+import {PaginationService} from '../service/pagination_service';
 
 @Component({
     selector: 'home',
@@ -12,8 +13,10 @@ import {Router} from '@angular/router';
 export class HomeComponent {
     blog$: Observable<Blog[]>;
 
-    constructor(private blogService: BlogService, private readonly router: Router) {
-     this.blog$ = this.blogService.getALlBlogs();
+    constructor(private blogService: BlogService,
+                private readonly router: Router,
+                private readonly paginationService: PaginationService) {
+            this.paginationService.init('blogs', 'title', { reverse: false });
     }
 
     moveTo(title: string) {
@@ -22,10 +25,6 @@ export class HomeComponent {
     }
 
     onScrollDown(ev) {
-        //TODO: implement infinite scroll
-      }
-
-      onUp(ev) {
-      // TODO:  implement infinite scroll
+            this.paginationService.more();
       }
 }

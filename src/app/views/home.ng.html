@@ -1,7 +1,7 @@
 <div class="container-grid" infinite-scroll
-     (scrolled)="onScrollDown()"
-     (scrolledUp)="onUp()">
-    <mat-card *ngFor="let b of blog$|async" (click)="moveTo(b.title)">
+     (scrolled)="onScrollDown($event)"
+    >
+    <mat-card *ngFor="let b of paginationService.data|async" (click)="moveTo(b.title)">
         <mat-card-header>
           <mat-card-title>{{b.title}}</mat-card-title>
         </mat-card-header>
