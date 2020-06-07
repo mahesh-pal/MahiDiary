@@ -1,5 +1,8 @@
 export class Blog {
-    constructor(readonly title: string, readonly content: string) {
+    constructor(readonly title: string,
+                readonly summary = '',
+                readonly content = '',
+                ) {
 
     }
 }

@@ -13,6 +13,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {HomeComponent} from './home';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import {MatCardModule} from '@angular/material/card';
         MatInputModule,
         MatSnackBarModule,
         MatGridListModule,
+        InfiniteScrollModule,
      ],
     exports: [ ],
 })

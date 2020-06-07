@@ -30,6 +30,7 @@
     "markdown-it": "^11.0.0",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-attrs": "^3.0.3",
+    "ngx-infinite-scroll": "^9.0.0",
     "remarkable": "^2.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

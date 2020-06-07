@@ -9,7 +9,6 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   constructor(private readonly router: Router){
-
   }
 
   moveToHome(){

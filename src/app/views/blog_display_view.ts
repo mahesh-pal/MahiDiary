@@ -1,8 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { BlogService } from '../service/blog_service';
 import { Subject, Observable } from 'rxjs';
-import { takeUntil, map, flatMap, filter } from 'rxjs/operators';
+import { takeUntil, map, flatMap} from 'rxjs/operators';
 import { Blog } from '../models';
 
 @Component({
@@ -15,18 +15,13 @@ export class BlogDisplayViewComponent implements OnDestroy {
     blog$: Observable<Blog>;
 
     constructor(private readonly route: ActivatedRoute,
-        private db: AngularFirestore,
+                private readonly blogService: BlogService
     ) {
         this.blog$ = this.route.paramMap.pipe(
             takeUntil(this.destroyed),
             map((params: ParamMap) => params.get('title') || ''),
             flatMap((title: string) => {
-                return this.db.doc<{content: string}>(`blogs/${title}/content/${title}`)
-                    .get()
-                    .pipe(
-                        filter(s => s.exists),
-                        map(s => new Blog(s.id, s.data().content)),
-                    );
+                return this.blogService.getBlog(title);
             }),
         );
 
