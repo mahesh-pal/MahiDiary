@@ -29,10 +29,12 @@ export class BlogService {
     }
 
     saveBlog(title: string, content: string) {
-        const blogRef = this.db.doc<{title: string}>(`blogs/${title}`);
-        const summaryPromise = blogRef.set({title});
+        const created = new Date();
+        const blogRef = this.db.doc<{title: string,created: Date}>(`blogs/${title}`);
+        const summaryPromise = blogRef.set({title,created});
         const contentPromise = blogRef.collection('content')
-                .doc<{content: string}>(title).set({content});
+                .doc<{content: string, created}>(title)
+                 .set({content, created});
 
         return Promise.all([summaryPromise, contentPromise ]);
     }

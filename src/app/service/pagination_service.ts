@@ -34,7 +34,7 @@ export class PaginationService {
   init(path, field, opts?) {
     this.query = {
       path,
-      field,
+      field: 'created',
       limit: 10,
       reverse: false,
       prepend: false,
@@ -43,7 +43,7 @@ export class PaginationService {
 
     const first = this.afs.collection<Blog>(this.query.path, ref => {
       return ref
-              .orderBy(this.query.field, 'asc')
+              .orderBy(this.query.field, 'desc')
               .limit(this.query.limit);
               // .where('categoria','==', 'Herramientas y Construcción' )
     });
