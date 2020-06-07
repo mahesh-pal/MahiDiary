@@ -1,0 +1,17 @@
+app-blog-display {
+    max-width: 70%;
+    margin: auto;
+    display: flex;
+ }
+ .container{ width: 100%;}
+
+ :host {
+     width: 100%;
+     display: flex;
+ }
+
+ .title {
+     text-align: center;
+     max-width: 70%;
+     margin: auto;
+ }

@@ -1,0 +1,17 @@
+<div class="editor-container">
+  <markdown-editor (latest)="latest($event)"></markdown-editor>
+  <mat-divider [vertical]="true"></mat-divider>
+  <app-blog-display [content]="content"></app-blog-display>
+</div>
+<mat-divider></mat-divider>
+<div class="actions">
+  <form #blogForm="ngForm"
+        (ngSubmit)="publish(blogForm.form.valid, blogForm.form.value.title)">
+    <mat-form-field class="example-full-width">
+      <mat-label>Blog title</mat-label>
+      <input matInput placeholder="Blog title" name="title" required [ngModel]>
+    </mat-form-field>
+    <button mat-raised-button color="primary"
+            [disabled]="!blogForm.form.valid || content.length===0">publish</button>
+  </form>
+</div>

@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+html,
+body {
+  font-family: 'Playfair Display', serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  line-height: 32px;
+    letter-spacing: -0.003em;
+    word-break: break-word;
+    color: rgba(0, 0, 0, 0.84);
+    font-style: normal;
+    font-weight: 150;
+}
+
+@import "../node_modules/codemirror/theme/eclipse.css";
+@import "../node_modules/codemirror/lib/codemirror.css";

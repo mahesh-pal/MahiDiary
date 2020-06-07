@@ -1,0 +1,9 @@
+:host {
+    width: 100%;
+}
+mat-toolbar {
+    flex-direction: row;
+}
+mat-toolbar-row.menu {
+    justify-content: flex-end;
+}

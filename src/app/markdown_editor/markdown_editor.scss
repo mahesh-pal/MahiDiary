@@ -1,0 +1,10 @@
+text-area {
+    overflow: scroll;
+}
+:host::ng-deep {
+    .CodeMirror  {
+        font-family: Arial, monospace;
+        font-size: 20px;
+        height: 100%;
+    }
+}

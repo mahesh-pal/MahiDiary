@@ -1,0 +1,68 @@
+:host {
+  display: flex;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+
+:host::ng-deep {
+  * {
+    line-height: 32px;
+    letter-spacing: -0.003em;
+    word-break: break-word;
+    color: rgba(0, 0, 0, 0.84);
+    font-style: normal;
+    font-weight: 150;
+  }
+
+  code {
+    border: 1px solid #eee;
+    border-radius: 3px;
+    background: #fffffc;
+    max-width: none;
+    min-width: auto;
+    overflow-wrap: normal;
+    display: block;
+    max-width:90%;
+    overflow: auto;
+  }
+  .title-image {
+    height: 300px;
+    position: relative;
+    img {
+      transition: opacity 400ms ease 0ms;
+      background: rgba(255, 255, 255, 1);
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+  // when a new paragraf start, margin to top
+  .next-para {
+  }
+
+  .link {
+    a {
+    }
+  }
+
+  //normal paragraph
+  .para {
+    line-height: 32px;
+    letter-spacing: -0.003em;
+    word-break: break-word;
+    color: rgba(0, 0, 0, 0.84);
+    font-style: normal;
+    font-weight: 150;
+  }
+
+  h1.heading {
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.022em;
+    margin-bottom: -0.28em;
+    font-size: 34px;
+    color: rgba(0, 0, 0, 0.84);
+  }
+}
