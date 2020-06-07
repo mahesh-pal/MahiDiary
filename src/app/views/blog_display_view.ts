@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BlogService } from '../service/blog_service';
 import { Subject, Observable } from 'rxjs';
-import { takeUntil, map, flatMap} from 'rxjs/operators';
+import { takeUntil, map, flatMap, catchError} from 'rxjs/operators';
 import { Blog } from '../models';
 
 @Component({

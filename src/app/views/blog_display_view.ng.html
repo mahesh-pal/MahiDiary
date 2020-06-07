@@ -1,5 +1,9 @@
-<div class="container" *ngIf="(blog$ | async); let blog">
+<div class="container" *ngIf="(blog$ | async); let blog; else error">
     <h1 class="title">{{blog.title}}</h1>
     <app-blog-display [content]="blog.content" >
     </app-blog-display>
 </div>
+
+<ng-template #error>
+    Blog Not found
+</ng-template>

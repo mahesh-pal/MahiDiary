@@ -14,12 +14,14 @@ import {HomeComponent} from './home';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import {AboutMeComponent} from './about_me';
 
 @NgModule({
     declarations: [
         BlogDisplayViewComponent,
         EditorViewComponent,
         HomeComponent,
+        AboutMeComponent,
      ],
     imports: [
         MatCardModule,

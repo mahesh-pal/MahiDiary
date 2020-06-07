@@ -11,6 +11,10 @@ export class AppComponent {
   constructor(private readonly router: Router){
   }
 
+  moveToMe() {
+    this.router.navigate(['me']);
+  }
+
   moveToHome(){
     this.router.navigate(['']);
   }
